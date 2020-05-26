@@ -6,8 +6,6 @@ import {
   VuexModule
 } from "vuex-module-decorators";
 import store from "@/store";
-import { Profile, User, UserSubmit, UserForUpdate } from "../models";
-import { fetchUser } from "../api";
 
 @Module({
   namespaced: true,
@@ -16,12 +14,11 @@ import { fetchUser } from "../api";
   dynamic: true
 })
 class UsersModule extends VuexModule {
-  
   user: any = null;
-  
+
   @Mutation
-   SET_SIMPLE_USER(user: any ) {
-    this.user = user
+  SET_SIMPLE_USER(user: any) {
+    this.user = user;
   }
 
   @MutationAction
