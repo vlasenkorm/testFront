@@ -22,27 +22,7 @@
             :search="search"
             @click:row="handleClick"
           >
-            <template slot="headers" slot-scope="props">
-              <tr class="grey lighten-3">
-                <th>
-                  <v-icon>filter_list</v-icon>
-                </th>
-                <th v-for="header in props.headers" :key="header.text">
-                  <div v-if="filters.hasOwnProperty(header.value)">
-                    <v-select
-                      flat
-                      hide-details
-                      small
-                      multiple
-                      clearable
-                      :items="columnValueList(header.value)"
-                      v-model="filters[header.value]"
-                    >
-                    </v-select>
-                  </div>
-                </th>
-              </tr>
-            </template>
+
             <template v-slot:item.picture="{ item }">
               <v-avatar>
                 <img :src="item.picture.thumbnail" />
@@ -77,7 +57,6 @@ export default class HelloWorld extends Vue {
   mounted() {
     this.getData("https://randomuser.me/api/?results=100").then(data => {
       this.apiData = data.results;
-      console.log("Start", data); // JSON data parsed by `response.json()` call
     });
   }
 
