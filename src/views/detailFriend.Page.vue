@@ -51,6 +51,15 @@
             ></v-img>
           </v-list-item-avatar>
         </v-list-item>
+        <v-btn
+          class="ma-2"
+          width="200"
+          tile
+          color="indigo"
+          dark
+          @click="handelReturn"
+          >Return
+        </v-btn>
       </v-card>
     </v-app>
   </div>
@@ -59,10 +68,14 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import users from "../store/modules/users";
+import router from "../router";
 @Component
 export default class HomePage extends Vue {
   detailData: any = {};
 
+  handelReturn() {
+    router.push("/");
+  }
   mounted() {
     this.detailData = users.user;
   }

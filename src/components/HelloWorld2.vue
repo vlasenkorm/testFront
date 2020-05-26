@@ -90,6 +90,10 @@ export default class HelloWorld extends Vue {
     "no-data",
     "no-results"
   ];
+  filters: Record<string, any> = {
+    Age: [],
+    Name: []
+  };
   headers: Array<Record<string, any>> = [
     {
       text: "Name",
