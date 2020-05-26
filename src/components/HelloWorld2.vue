@@ -15,14 +15,6 @@
               hide-details
             ></v-text-field>
             <v-spacer></v-spacer>
-
-            <v-select
-              v-model="enabled"
-              :items="slots"
-              label="Filter"
-              style="padding-top: 33px;"
-              clearable
-            ></v-select>
           </v-card-title>
 
           <v-data-table
@@ -32,10 +24,6 @@
             item-key="name.first"
             @click:row="handleClick"
           >
-          
-            <template v-if="isEnabled('no-data')" v-slot:no-data>
-              NO DATA HERE!
-            </template>
 
             <template v-slot:item.picture="{ item }">
               <v-avatar>
