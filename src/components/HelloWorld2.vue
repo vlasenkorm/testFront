@@ -16,13 +16,13 @@
             ></v-text-field>
             <v-spacer></v-spacer>
           </v-card-title>
+
           <v-data-table
             :headers="headers"
             :items="apiData"
             :search="search"
             @click:row="handleClick"
           >
-
             <template v-slot:item.picture="{ item }">
               <v-avatar>
                 <img :src="item.picture.thumbnail" />
@@ -44,7 +44,7 @@ import users from "../store/modules/users";
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 
-  handleClick(value: any) {
+  handleClick(value: Record<string, any>) {
     console.log("click", value);
     users.SET_SIMPLE_USER(value);
     router.push("About");
