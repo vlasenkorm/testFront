@@ -71,7 +71,13 @@ import users from "../store/modules/users";
 import router from "../router";
 @Component
 export default class HomePage extends Vue {
-  detailData: any = {};
+  detailData: any = {
+    name: { title: "" },
+    login: { username: "" },
+    dob: { age: "" },
+    location: { country: "", city: "" },
+    picture: { large: "" }
+  };
 
   handelReturn() {
     router.push("/");

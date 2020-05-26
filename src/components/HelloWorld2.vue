@@ -61,7 +61,6 @@ export default class HelloWorld extends Vue {
   enabled = "";
 
   handleClick(value: Record<string, any>) {
-    console.log("click", value);
     users.SET_SIMPLE_USER(value);
     router.push("About");
   }
